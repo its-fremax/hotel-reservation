@@ -24,8 +24,8 @@ class Hotel:
             return False
 
 
-class HotelSpar(Hotel):
-    def book_spar(self):
+class HotelSpa(Hotel):
+    def book_spa(self):
         pass
 
 
@@ -84,7 +84,7 @@ print(df)
 h_id = input("Enter a hotel id: ")
 
 
-hotel = HotelSpar(h_id)
+hotel = HotelSpa(h_id)
 
 if hotel.available():
     credit_card = SecureCreditCard(number="1234567890123456")
@@ -94,9 +94,9 @@ if hotel.available():
             name = input("Enter your name: ")
             reservation_ticket = ReservationTicket(customer_name=name, hotel_object=hotel)
             print(reservation_ticket.generate())
-            spa = input("Would you want a spa package?")
+            spa = input("Would you want a spa package?: ")
             if spa == "yes":
-                hotel.book_spar()
+                hotel.book_spa()
                 spar_ticket = SpaReservationTicket(name, hotel)
                 print(spar_ticket.generate())
         else:
